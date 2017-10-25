@@ -21,6 +21,9 @@
 		FA37F6B61FA0F2B0000FE34D /* cardSlide1.wav in Resources */ = {isa = PBXBuildFile; fileRef = FA37F6B01FA0F2B0000FE34D /* cardSlide1.wav */; };
 		FA37F6B71FA0F2B0000FE34D /* cardSlide8.wav in Resources */ = {isa = PBXBuildFile; fileRef = FA37F6B11FA0F2B0000FE34D /* cardSlide8.wav */; };
 		FA37F6BA1FA0F2F0000FE34D /* DeviceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA37F6B91FA0F2F0000FE34D /* DeviceType.swift */; };
+		FA37F6BC1FA0F3D1000FE34D /* FontType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA37F6BB1FA0F3D1000FE34D /* FontType.swift */; };
+		FA37F6BE1FA0F3FE000FE34D /* KeyCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA37F6BD1FA0F3FE000FE34D /* KeyCode.swift */; };
+		FA37F6C01FA0F44F000FE34D /* SoundType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA37F6BF1FA0F44F000FE34D /* SoundType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,9 @@
 		FA37F6B01FA0F2B0000FE34D /* cardSlide1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cardSlide1.wav; sourceTree = "<group>"; };
 		FA37F6B11FA0F2B0000FE34D /* cardSlide8.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cardSlide8.wav; sourceTree = "<group>"; };
 		FA37F6B91FA0F2F0000FE34D /* DeviceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceType.swift; sourceTree = "<group>"; };
+		FA37F6BB1FA0F3D1000FE34D /* FontType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontType.swift; sourceTree = "<group>"; };
+		FA37F6BD1FA0F3FE000FE34D /* KeyCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyCode.swift; sourceTree = "<group>"; };
+		FA37F6BF1FA0F44F000FE34D /* SoundType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +117,9 @@
 			isa = PBXGroup;
 			children = (
 				FA37F6B91FA0F2F0000FE34D /* DeviceType.swift */,
+				FA37F6BB1FA0F3D1000FE34D /* FontType.swift */,
+				FA37F6BD1FA0F3FE000FE34D /* KeyCode.swift */,
+				FA37F6BF1FA0F44F000FE34D /* SoundType.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -194,9 +203,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA37F6C01FA0F44F000FE34D /* SoundType.swift in Sources */,
 				FA37F6991FA0F229000FE34D /* GameScene.swift in Sources */,
 				FA37F6BA1FA0F2F0000FE34D /* DeviceType.swift in Sources */,
 				FA37F69B1FA0F229000FE34D /* GameViewController.swift in Sources */,
+				FA37F6BC1FA0F3D1000FE34D /* FontType.swift in Sources */,
+				FA37F6BE1FA0F3FE000FE34D /* KeyCode.swift in Sources */,
 				FA37F6931FA0F229000FE34D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
