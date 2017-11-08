@@ -24,6 +24,8 @@
 		FA37F6BC1FA0F3D1000FE34D /* FontType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA37F6BB1FA0F3D1000FE34D /* FontType.swift */; };
 		FA37F6BE1FA0F3FE000FE34D /* KeyCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA37F6BD1FA0F3FE000FE34D /* KeyCode.swift */; };
 		FA37F6C01FA0F44F000FE34D /* SoundType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA37F6BF1FA0F44F000FE34D /* SoundType.swift */; };
+		FAFC6F171FB3A4A700816CD9 /* ParallaxEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFC6F161FB3A4A700816CD9 /* ParallaxEffect.swift */; };
+		FAFC6F191FB3A72E00816CD9 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFC6F181FB3A72E00816CD9 /* Container.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		FA37F6BB1FA0F3D1000FE34D /* FontType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontType.swift; sourceTree = "<group>"; };
 		FA37F6BD1FA0F3FE000FE34D /* KeyCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyCode.swift; sourceTree = "<group>"; };
 		FA37F6BF1FA0F44F000FE34D /* SoundType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundType.swift; sourceTree = "<group>"; };
+		FAFC6F161FB3A4A700816CD9 /* ParallaxEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParallaxEffect.swift; sourceTree = "<group>"; };
+		FAFC6F181FB3A72E00816CD9 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +124,8 @@
 				FA37F6BB1FA0F3D1000FE34D /* FontType.swift */,
 				FA37F6BD1FA0F3FE000FE34D /* KeyCode.swift */,
 				FA37F6BF1FA0F44F000FE34D /* SoundType.swift */,
+				FAFC6F161FB3A4A700816CD9 /* ParallaxEffect.swift */,
+				FAFC6F181FB3A72E00816CD9 /* Container.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -204,11 +210,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA37F6C01FA0F44F000FE34D /* SoundType.swift in Sources */,
+				FAFC6F171FB3A4A700816CD9 /* ParallaxEffect.swift in Sources */,
 				FA37F6991FA0F229000FE34D /* GameScene.swift in Sources */,
 				FA37F6BA1FA0F2F0000FE34D /* DeviceType.swift in Sources */,
 				FA37F69B1FA0F229000FE34D /* GameViewController.swift in Sources */,
 				FA37F6BC1FA0F3D1000FE34D /* FontType.swift in Sources */,
 				FA37F6BE1FA0F3FE000FE34D /* KeyCode.swift in Sources */,
+				FAFC6F191FB3A72E00816CD9 /* Container.swift in Sources */,
 				FA37F6931FA0F229000FE34D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
