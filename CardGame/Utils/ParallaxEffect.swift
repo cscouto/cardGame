@@ -16,17 +16,16 @@ class ParallaxEffect: UIInterpolatingMotionEffect {
     
     var delegate: ParallaxEffectDelegate?
     
-    override func keyPathsAndRelativeValuesForViewerOffset(
-        viewerOffset: UIOffset) -> [String : AnyObject]? {
-        
-        let values = super.keyPathsAndRelativeValuesForViewerOffset(
-            viewerOffset
-        )
-        if let delegate = self.delegate {
-            delegate.keyPathsAndRelativeValuesForViewerOffset(values)
-        }
-        
-        return values
+    override func keyPathsAndRelativeValues(forViewerOffset viewerOffset: UIOffset) -> [String : Any]? {
+            
+            let values = super.keyPathsAndRelativeValues(
+                forViewerOffset: viewerOffset
+            )
+            if let delegate = self.delegate {
+                delegate.keyPathsAndRelativeValuesForViewerOffset(values: values as [String : AnyObject]?)
+            }
+            
+        return values! as [String : AnyObject]
     }
     
 }

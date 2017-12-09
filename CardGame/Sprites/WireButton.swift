@@ -41,11 +41,11 @@ class WireButton: BaseButton {
         self.label = SKLabelNode(text: title)
         self.addChild(self.label)
         self.label.fontSize = 24
-        self.label.fontName = Fonts.HelveticaNeueLight.rawValue
-        self.label.horizontalAlignmentMode = .Center
-        self.label.verticalAlignmentMode = .Center
+        self.label.fontName = FontType.HelveticaNeueLight.rawValue
+        self.label.horizontalAlignmentMode = .center
+        self.label.verticalAlignmentMode = .center
         
-        self.updateHover(false, hover: self.hover)
+        self.updateHover(animated: false, hover: self.hover)
         
     }
     
@@ -74,7 +74,7 @@ class WireButton: BaseButton {
         )
         self.border.lineWidth = 4.0
         self.border.strokeColor = color
-        self.border.lineJoin = .Round
+        self.border.lineJoin = .round
         self.border.position = CGPoint(
             x: -size.width / 2,
             y: -size.height / 2
@@ -83,13 +83,13 @@ class WireButton: BaseButton {
         
         self.label = SKLabelNode(text: title)
         self.addChild(self.label)
-        self.label.fontName = Fonts.HelveticaNeueLight.rawValue
+        self.label.fontName = FontType.HelveticaNeueLight.rawValue
         self.label.position = CGPoint(
             x: self.label.position.x,
             y: -self.size.height / 2
         )
         
-        self.updateHover(false, hover: self.hover)
+        self.updateHover(animated: false, hover: self.hover)
         
     }
     
@@ -99,9 +99,9 @@ class WireButton: BaseButton {
             alpha = 0.25
         }
         if animated {
-            let action: SKAction = SKAction.fadeAlphaTo(alpha, duration: 0.1)
-            self.border.runAction(action)
-            self.label.runAction(action)
+            let action: SKAction = SKAction.fadeAlpha(to: alpha, duration: 0.1)
+            self.border.run(action)
+            self.label.run(action)
         } else {
             self.border.alpha = alpha
             self.label.alpha = alpha

@@ -14,14 +14,14 @@ class BaseButton: SKSpriteNode {
     
     var hover: Bool = false {
         didSet {
-            self.updateHover(true, hover: self.hover)
+            self.updateHover(animated: true, hover: self.hover)
         }
     }
     
     private var targets: [ObjectSelectorPair] = [ObjectSelectorPair]()
     
     func addTarget(target: NSObject, selector: Selector) {
-        let weakTarget = TRIWeakContainer(value: target)
+        let weakTarget = Container(value: target)
         self.targets.append((object: weakTarget, selector: selector))
     }
     
@@ -31,32 +31,32 @@ class BaseButton: SKSpriteNode {
             let obj = objectSelectorPair.object
             let sel = objectSelectorPair.selector
             if obj.value == target && sel == selector {
-                self.targets.removeAtIndex(index)
+                self.targets.remove(at: index)
             }
-            index++
+            index+=1
         }
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.hover = true
     }
     
-    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.hover = false
         let touch = touches.first!
         if let parent = self.parent {
-            let point = touch.locationInNode(parent)
-            if self.containsPoint(point) {
+            let point = touch.location(in: parent)
+            if self.contains(point) {
                 self.handlePress()
             }
         }
     }
-    
-    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         let touch = touches.first!
         if let parent = self.parent {
-            let point = touch.locationInNode(parent)
-            if self.containsPoint(point) {
+            let point = touch.location(in: parent)
+            if self.contains(point) {
                 self.hover = true
             } else {
                 self.hover = false
@@ -68,7 +68,7 @@ class BaseButton: SKSpriteNode {
         for objectSelectorPair: ObjectSelectorPair in self.targets {
             let obj = objectSelectorPair.object
             let sel = objectSelectorPair.selector
-            obj.value!.performSelector(sel)
+            obj.value?.perform(sel)
         }
     }
     
@@ -78,8 +78,8 @@ class BaseButton: SKSpriteNode {
             alpha = 0.2
         }
         if animated {
-            let action: SKAction = SKAction.fadeAlphaTo(alpha, duration: 0.1)
-            self.runAction(action)
+            let action: SKAction = SKAction.fadeAlpha(to: alpha, duration: 0.1)
+            self.run(action)
         } else {
             self.alpha = alpha
         }

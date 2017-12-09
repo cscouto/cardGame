@@ -47,14 +47,14 @@ class SimpleButton: BaseButton {
         self.defaultImg = defaultImg
         
         self.updateHover(
-            false,
+            animated: false,
             hover: self.hover
         )
         
     }
     
     convenience init(image: String, size: CGSize) {
-        self.init(image: image, size: size, color: UIColor.blackColor())
+        self.init(image: image, size: size, color: UIColor.black)
     }
     
     override func updateHover(animated: Bool, hover: Bool) {
@@ -63,11 +63,11 @@ class SimpleButton: BaseButton {
             alpha = 0.2
         }
         if animated {
-            let action: SKAction = SKAction.fadeAlphaTo(
-                alpha,
+            let action: SKAction = SKAction.fadeAlpha(
+                to: alpha,
                 duration: 0.2
             )
-            self.background!.runAction(action)
+            self.background!.run(action)
         } else {
             self.background!.alpha = alpha
         }
