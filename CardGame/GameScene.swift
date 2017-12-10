@@ -11,13 +11,11 @@ import GameplayKit
 
 class GameScene: SKScene {
     
-    private var label : SKLabelNode?
-    private var spinnyNode : SKShapeNode?
+    private var manager: GameSetupManager?
     
     override func didMove(to view: SKView) {
-        let model = Card(suit: .Clubs, rank: .ace)
-        let card = CardNode(card: model)
-        card.position = CGPoint(x: 0, y: 0)
-        self.addChild(card)
+        let manager = GameSetupManager(gameScene: self)
+        self.manager = manager
+        self.manager?.setup()
     }
 }

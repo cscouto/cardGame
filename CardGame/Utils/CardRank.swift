@@ -9,22 +9,38 @@
 import Foundation
 
 enum Rank: Int {
-    case ace = 1
-    case two, three, four, five, six, seven, eight, nine, ten
-    case jack, queen, king
+    case Ace = 1
+    case Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten
+    case Jack, Queen, King
     
     func stringValue() -> String {
         switch self {
-        case .ace:
+        case .Ace:
             return "A"
-        case .jack:
+        case .Jack:
             return "J"
-        case .king:
+        case .King:
             return "K"
-        case .queen:
+        case .Queen:
             return "Q"
         default:
             return String(self.rawValue)
         }
     }
+    
+    static let allValues = [
+        Rank.Ace,
+        Rank.Two,
+        Rank.Three,
+        Rank.Four,
+        Rank.Five,
+        Rank.Six,
+        Rank.Seven,
+        Rank.Eight,
+        Rank.Nine,
+        Rank.Ten,
+        Rank.Jack,
+        Rank.Queen,
+        Rank.King
+    ]
 }
