@@ -15,6 +15,9 @@ class GameScene: SKScene {
     private var spinnyNode : SKShapeNode?
     
     override func didMove(to view: SKView) {
-        
+        let model = Card(suit: .Clubs, rank: .ace)
+        let card = CardNode(card: model)
+        card.position = CGPoint(x: 0, y: 0)
+        self.addChild(card)
     }
 }

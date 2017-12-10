@@ -9,8 +9,8 @@
 import Foundation
 
 enum Suit: String {
-    case clubs
-    case diamonds
-    case hearts
-    case spaces
+    case Clubs
+    case Diamonds
+    case Hearts
+    case Spaces
 }
