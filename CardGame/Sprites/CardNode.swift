@@ -12,11 +12,13 @@ class CardNode: SKNode {
     
     var card: Card?
     weak var front: SKSpriteNode?
+    var size: CGSize = GameSceneLayout.cardSize
     
     init(card: Card) {
         super.init()
         self.card = card
         let front = SKSpriteNode(imageNamed: card.asset)
+        front.size = size
         self.addChild(front)
         self.front = front
     }

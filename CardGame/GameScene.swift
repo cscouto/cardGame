@@ -16,16 +16,5 @@ class GameScene: SKScene {
     
     override func didMove(to view: SKView) {
         
-        let myLabel = SKLabelNode(
-            fontNamed: FontType.HelveticaNeueLight.rawValue
-        )
-        myLabel.text = "Hello, World"
-        myLabel.fontSize = 45
-        myLabel.position = CGPoint(
-            x:self.frame.midX,
-            y:self.frame.midY
-        )
-        
-        self.addChild(myLabel)
     }
 }
