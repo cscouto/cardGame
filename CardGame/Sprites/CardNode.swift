@@ -14,6 +14,10 @@ class CardNode: SKNode {
     weak var front: SKSpriteNode?
     var size: CGSize = GameSceneLayout.cardSize
     
+    override init(){
+        super.init()
+    }
+    
     init(card: Card) {
         super.init()
         self.card = card

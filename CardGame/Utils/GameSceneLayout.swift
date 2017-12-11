@@ -9,6 +9,7 @@
 import UIKit
 
 class GameSceneLayout {
+    static var offSetBetweenCards:CGFloat = 2.0
     static var cardSizeMultiplier = 0.75
     static var cardSize: CGSize = CGSize(
         width: 77 * cardSizeMultiplier,
