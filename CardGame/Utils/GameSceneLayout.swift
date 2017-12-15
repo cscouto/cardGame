@@ -9,6 +9,7 @@
 import UIKit
 
 class GameSceneLayout {
+    static var peakOffSetY:CGFloat = 80.0
     static var offSetBetweenCards:CGFloat = 2.0
     static var cardSizeMultiplier = 0.75
     static var cardSize: CGSize = CGSize(

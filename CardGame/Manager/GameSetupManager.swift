@@ -11,6 +11,30 @@ class GameSetupManager {
     
     private weak var gameScene: GameScene?
     private var cardDeck: [Card] = []
+    var leftPeak: [CardNode] {
+        get{
+            return self.gameScene!.leftPeak
+        }
+        set{
+            self.gameScene?.leftPeak = newValue
+        }
+    }
+    var centerPeak: [CardNode] {
+        get{
+            return self.gameScene!.centerPeak
+        }
+        set{
+            self.gameScene?.centerPeak = newValue
+        }
+    }
+    var rightPeak: [CardNode] {
+        get{
+            return self.gameScene!.rightPeak
+        }
+        set{
+            self.gameScene?.rightPeak = newValue
+        }
+    }
     
     init(gameScene: GameScene) {
         self.gameScene = gameScene
@@ -69,6 +93,15 @@ class GameSetupManager {
         return card
     }
     func setupPeak(){
-        _ = self.setupPeakWithTopPositionAtPoint(point: CGPoint(x: 0, y: 30))
+        let offSetY = (self.gameScene!.size.height/2) - GameSceneLayout.peakOffSetY
+        let centerX:CGFloat = 0.0
+        let dummyCard = CardNode()
+        var leftX = centerX - dummyCard.size.width * 3
+        leftX -= GameSceneLayout.offSetBetweenCards * 6
+        var rightX = centerX + dummyCard.size.width * 3
+        rightX += GameSceneLayout.offSetBetweenCards * 6
+        self.centerPeak = self.setupPeakWithTopPositionAtPoint(point: CGPoint(x: centerX, y: offSetY))
+        self.leftPeak = self.setupPeakWithTopPositionAtPoint(point: CGPoint(x: leftX, y: offSetY))
+        self.rightPeak = self.setupPeakWithTopPositionAtPoint(point: CGPoint(x: rightX, y: offSetY))
     }
 }
