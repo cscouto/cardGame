@@ -95,15 +95,25 @@ class GameSetupManager {
     }
     func setupOpenCards(){
         let lastCard = rightPeak.last!
-        var yPos = lastCard.position.y - lastCard.size.height / 2
+        let yPos = lastCard.position.y - lastCard.size.height / 2
         var xPos = lastCard.position.x + lastCard.size.width / 2
         for _ in 0...9{
             let openCard = self.createCard(x: xPos, y: yPos)
-            xPos -= GameSceneLayout.offSetBetweenCards * 2
-            yPos -= lastCard.size.width
+            //xPos -= GameSceneLayout.offSetBetweenCards * 2
+            xPos -= lastCard.size.width + GameSceneLayout.offSetBetweenCards
             self.openedCards.append(openCard)
         }
         self.openedCards = self.openedCards.reversed()
+        self.addCardsToPeak(peak: &self.leftPeak, offSet: 0)
+        self.addCardsToPeak(peak: &self.centerPeak, offSet: 3)
+        self.addCardsToPeak(peak: &self.rightPeak, offSet: 6)
+    }
+    func addCardsToPeak( peak: inout [CardNode], offSet: Int){
+        let numberOfCards = 4
+        for i in offSet..<offSet+numberOfCards {
+            let openedCard = self.openedCards[i]
+            peak.append(openedCard)
+        }
     }
     func setupPeak(){
         let offSetY = (self.gameScene!.size.height/2) - GameSceneLayout.peakOffSetY

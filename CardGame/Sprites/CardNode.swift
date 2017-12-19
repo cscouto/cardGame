@@ -10,6 +10,9 @@ import SpriteKit
 
 class CardNode: SKNode {
     
+    override var description: String {
+        return "\(self.card!.rank) of \(self.card!.suit)"
+    }
     var card: Card?
     weak var front: SKSpriteNode?
     var size: CGSize = GameSceneLayout.cardSize
