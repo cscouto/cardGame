@@ -11,6 +11,7 @@ class GameSetupManager {
     
     private weak var gameScene: GameScene?
     private var cardDeck: [Card] = []
+    private var openedCards: [CardNode] = []
     var leftPeak: [CardNode] {
         get{
             return self.gameScene!.leftPeak
@@ -92,6 +93,18 @@ class GameSetupManager {
         self.gameScene?.addChild(card)
         return card
     }
+    func setupOpenCards(){
+        let lastCard = rightPeak.last!
+        var yPos = lastCard.position.y - lastCard.size.height / 2
+        var xPos = lastCard.position.x + lastCard.size.width / 2
+        for _ in 0...9{
+            let openCard = self.createCard(x: xPos, y: yPos)
+            xPos -= GameSceneLayout.offSetBetweenCards * 2
+            yPos -= lastCard.size.width
+            self.openedCards.append(openCard)
+        }
+        self.openedCards = self.openedCards.reversed()
+    }
     func setupPeak(){
         let offSetY = (self.gameScene!.size.height/2) - GameSceneLayout.peakOffSetY
         let centerX:CGFloat = 0.0
@@ -103,5 +116,6 @@ class GameSetupManager {
         self.centerPeak = self.setupPeakWithTopPositionAtPoint(point: CGPoint(x: centerX, y: offSetY))
         self.leftPeak = self.setupPeakWithTopPositionAtPoint(point: CGPoint(x: leftX, y: offSetY))
         self.rightPeak = self.setupPeakWithTopPositionAtPoint(point: CGPoint(x: rightX, y: offSetY))
+        setupOpenCards()
     }
 }
