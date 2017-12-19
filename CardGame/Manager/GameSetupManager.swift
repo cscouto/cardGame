@@ -99,7 +99,7 @@ class GameSetupManager {
         var xPos = lastCard.position.x + lastCard.size.width / 2
         for _ in 0...9{
             let openCard = self.createCard(x: xPos, y: yPos)
-            //xPos -= GameSceneLayout.offSetBetweenCards * 2
+            openCard.open = true
             xPos -= lastCard.size.width + GameSceneLayout.offSetBetweenCards
             self.openedCards.append(openCard)
         }
