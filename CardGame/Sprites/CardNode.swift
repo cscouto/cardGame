@@ -57,4 +57,7 @@ class CardNode: SKNode {
             self.back!.isHidden = false
         }
     }
+    func remove(){
+        self.removeFromParent()
+    }
 }
